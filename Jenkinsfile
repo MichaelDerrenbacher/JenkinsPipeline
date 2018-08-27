@@ -17,9 +17,10 @@ pipeline {
             }
         }
     }
-}
-post {
-    success {
-        bat "echo Success!"
+
+    post {
+        success {
+            bat "echo Success!"
+        }
     }
 }
