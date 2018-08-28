@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        ContainerName = "${JOB_NAME}-${BUILD_NUMBER}"
+        ContainerName = "PipelineContainer"
     }
     
     stages {
