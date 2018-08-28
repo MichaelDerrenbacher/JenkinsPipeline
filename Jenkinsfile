@@ -14,11 +14,11 @@ pipeline {
             }
         }
     }
-}
 
-post{
-    always {
-        bat "docker stop ${ContainerName}"
-        bat "docker rm ${ContainerName}"
-    }  
+    post{
+        always {
+            bat "docker stop ${ContainerName}"
+            bat "docker rm ${ContainerName}"
+        }  
+    }
 }
