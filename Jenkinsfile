@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                bat "echo Friend"
+                bat "echo Friends"
             }
         }
     }
