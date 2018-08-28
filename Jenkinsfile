@@ -1,9 +1,7 @@
 pipeline {
     agent any
     
-    options {
-        
-    }
+    //options {}
     
     stages {
         stage('Run Container') { 
