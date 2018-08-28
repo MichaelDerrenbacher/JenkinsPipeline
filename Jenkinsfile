@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                bat "echo Hey"
+                bat "echo Hi There"
             }
         }
         stage('Test') { 
             steps {
-                bat "echo There"
+                bat "echo My"
             }
         }
         stage('Deploy') { 
