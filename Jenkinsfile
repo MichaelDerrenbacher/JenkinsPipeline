@@ -1,25 +1,18 @@
-#!/usr/bin/env groovy
 pipeline {
     agent any
     
-    environment {
-        ContainerName = "PipelineContainer"
-    }
+    //options {}
     
     stages {
-        stage('Docker') { 
-            
+        stage('Run Container') { 
             steps {
-                bat "docker run -d -i --name ${ContainerName} alpine cat"
+                bat "docker run -d -i  alpine cat"
+            }
+        }
+        stage('View Container') { 
+            steps {
                 bat "docker ps"
             }
         }
-    }
-
-    post{
-        always {
-            bat "docker stop ${ContainerName}"
-            bat "docker rm ${ContainerName}"
-        }  
     }
 }
