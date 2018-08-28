@@ -1,9 +1,23 @@
 pipeline {
-    agent any 
+    agent none 
+    
+    environment {
+        ContainerName = "${JOB_NAME}-${BUILD_NUMBER}"
+    }
+    
     stages {
-        stage('Build') { 
+        stage('Docker') { 
+            agent {
+				docker {
+					label 'master'
+					image 'kbedel/jenkins-node-gulp:node10'
+					args  '--privileged --name "${ContainerName}"
+				}
+			}
             steps {
-                bat "echo Hi There"
+                bat '''
+                    echo "Yo"
+                '''
             }
         }
         stage('Test') { 
