@@ -11,7 +11,7 @@ pipeline {
 				docker {
 					label 'master'
 					image 'kbedel/jenkins-node-gulp:node10'
-					args  '--privileged --name "${ContainerName}"
+					args  '--privileged --name "${ContainerName}"'
 				}
 			}
             steps {
