@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Run Container') { 
             steps {
-                bat "docker run -name "${ContainerName}" -d -i  alpine cat"
+                bat "docker run --name "${ContainerName}" -d -i  alpine cat"
             }
         }
         stage('View Container') { 
