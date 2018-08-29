@@ -3,10 +3,14 @@ pipeline {
     
     //options {}
     
+    environment {
+        ContainerName = "Container-${BUILD_NUMBER}"
+    }
+    
     stages {
         stage('Run Container') { 
             steps {
-                bat "docker run -d -i  alpine cat"
+                bat "docker run -name "${ContainerName}" -d -i  alpine cat"
             }
         }
         stage('View Container') { 
