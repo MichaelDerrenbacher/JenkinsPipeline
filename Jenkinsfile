@@ -1,7 +1,9 @@
 pipeline {
     agent any
     
-    //options {}
+    options {
+        timestamps()
+    }
     
     environment {
         ContainerName = "Container-${BUILD_NUMBER}"
@@ -17,6 +19,12 @@ pipeline {
             steps {
                 bat "docker ps"
             }
+        }
+    }
+    post {
+        always {
+            bat "docker stop ${ContainerName}"
+            bat "docker rm ${ContainerName}"
         }
     }
 }
