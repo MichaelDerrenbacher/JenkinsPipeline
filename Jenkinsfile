@@ -25,7 +25,6 @@ pipeline {
         always {
             bat "docker stop ${ContainerName}"
             bat "docker rm ${ContainerName}"
-            ERROR HERE 
         }
     }
 }
