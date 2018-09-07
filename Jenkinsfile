@@ -1,8 +1,6 @@
 pipeline {
     agent any
     
-    //options {}
-    
     environment {
         ContainerName = "Container-${BUILD_NUMBER}"
     }
